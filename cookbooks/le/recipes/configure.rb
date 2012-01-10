@@ -16,7 +16,7 @@ follow_paths = [
   follow_paths << "/var/log/nginx/#{app_name}.access.log"
 end
 
-follow_paths do |path|
+follow_paths.each do |path|
   execute "le follow #{path}" do
     command "le follow #{path}"
     action :run
