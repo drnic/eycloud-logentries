@@ -12,8 +12,8 @@ follow_paths = [
   "/var/log/syslog",
   "/var/log/auth.log"
 ]
-(node[:applications] || []).each do |app_name, app_info|
-  follow_paths << "/var/log/nginx/#{app_name}.access.log"
+node.engineyard.apps.each_with_index do |app,index|
+  follow_paths << "/var/log/nginx/#{app.name}.access.log"
 end
 
 follow_paths.each do |path|
