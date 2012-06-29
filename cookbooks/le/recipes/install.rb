@@ -12,7 +12,7 @@ directory "/engineyard/portage/engineyard/dev-util/le" do
 end
 
 remote_file "/engineyard/portage/engineyard/dev-util/le/le-0.8.15.ebuild" do
-  source "https://logentries.com/media/data/le-0.8.15.ebuild"
+  source "rep.logentries.com/gentoo/le.ebuild"
   mode "0644"
   not_if { File.exists?("/engineyard/portage/engineyard/dev-util/le/le-0.8.15.ebuild") }
 end
@@ -27,4 +27,3 @@ package 'dev-util/le' do
   version node[:le_version]
   action :install
 end
-
