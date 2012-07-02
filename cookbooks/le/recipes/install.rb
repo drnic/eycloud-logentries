@@ -14,7 +14,6 @@ end
 remote_file "/engineyard/portage/engineyard/dev-util/le/le-0.8.15.ebuild" do
   source "rep.logentries.com/gentoo/le.ebuild"
   mode "0644"
-  not_if { File.exists?("/engineyard/portage/engineyard/dev-util/le/le-0.8.15.ebuild") }
 end
 
 execute "ebuild le-0.8.15.ebuild digest" do
