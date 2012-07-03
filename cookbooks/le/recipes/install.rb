@@ -12,7 +12,7 @@ directory "/engineyard/portage/engineyard/dev-util/le" do
 end
 
 remote_file "/engineyard/portage/engineyard/dev-util/le/le-0.0.0.ebuild" do
-  source "rep.logentries.com/gentoo/le.ebuild"
+  source "https://rep.logentries.com/gentoo/le.ebuild"
   mode "0644"
 end
 
