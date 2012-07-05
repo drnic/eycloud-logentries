@@ -17,3 +17,5 @@ remote_file "/etc/monit.d/le.monitrc" do
 	backup false
 	action :create
 end
+
+execute "monit reload"
