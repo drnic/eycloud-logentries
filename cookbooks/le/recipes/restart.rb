@@ -3,8 +3,9 @@
 # Recipe:: restart
 #
 
-# TODO - manage by monit
-execute "le monitor" do
-  command "le monitordaemon &"
-  action :run
-end
+execute "if ps ax | grep -v grep | grep 'le monitordaemon';
+then
+  echo 'le monitordaemon is already running' > /var/log/daemon.log;
+else 
+	le monitordaemon;
+fi"
