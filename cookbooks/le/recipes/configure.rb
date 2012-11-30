@@ -3,8 +3,8 @@
 # Recipe:: configure
 #
 
-execute "le register --user-key" do
-  command "le register --user-key #{node[:le_user_key]}"
+execute "le register --account-key" do
+  command "le register --account-key #{node[:le_api_key]}"
   action :run
   not_if { File.exists?('/etc/le/config') } 
 end

@@ -1,4 +1,4 @@
-#
+
 # Cookbook Name:: le
 # Recipe:: restart
 #
