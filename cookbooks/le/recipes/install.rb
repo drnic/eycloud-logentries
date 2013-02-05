@@ -26,3 +26,20 @@ package 'dev-util/le' do
   version node['0.0.0']
   action :install
 end
+
+# ln -s /usr/bin/le /usr/bin/le-monitordaemon
+link "/usr/bin/le-monitordaemon" do
+	to "/usr/bin/le"
+end
+
+# init.d script for le agent
+template '/etc/init.d/logentries' do
+	source 'logentries.initd.erb'
+	mode '0755'
+end
+
+# Start agent when instance boots
+execute 'start logentries at boot' do
+	command %{rc-update add logentries default}
+	creates '/etc/runlevels/default/logentries'
+end
