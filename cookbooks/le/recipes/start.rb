@@ -3,7 +3,7 @@
 # Recipe:: start
 #
 
-# Start the le agent
+# Restart the le agent
 execute 'start le agent' do
-	command %{/etc/init.d/logentries start}
+	command %{/etc/init.d/logentries restart}
 end
