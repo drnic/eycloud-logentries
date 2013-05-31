@@ -23,5 +23,6 @@ follow_paths.each do |path|
     command "le follow #{path}"
     ignore_failure true 
     action :run
+    not_if "le followed #{path}"
   end
 end
