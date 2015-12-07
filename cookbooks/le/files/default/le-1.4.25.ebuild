@@ -33,6 +33,5 @@ src_compile() {
 	distutils-r1_python_compile
 }
 src_install() {
-	distutils-r1_python_install
-	emake DESTDIR="${D}" install || die "Install failed"
+	    esetup.py install --compile -O2 --root=/var/tmp/portage/dev-util/le-1.4.25/image/
 }
