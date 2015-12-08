@@ -4,9 +4,9 @@
 #
 
 execute "le register --account-key" do
-  command "le register --account-key #{node[:le_api_key]} --name #{node[:applications].keys.first}"
+  command "/usr/bin/le register --account-key #{node[:le_api_key]} --name #{node[:applications].keys.first}"
   action :run
-  not_if { File.exists?('/etc/le/config') } 
+  not_if { File.exists?('/etc/le/config') }
 end
 
 follow_paths = [
@@ -21,7 +21,7 @@ end
 follow_paths.each do |path|
   execute "le follow #{path}" do
     command "le follow #{path}"
-    ignore_failure true 
+    ignore_failure true
     action :run
     not_if "le followed #{path}"
   end
